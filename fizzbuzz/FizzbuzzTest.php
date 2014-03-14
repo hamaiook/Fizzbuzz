@@ -1,6 +1,9 @@
 <?php
 class Fizzbuzz {
   function validateFizzbuzz($input) {
+    if(($input%3)==0 && ($input%5)==0){
+      return 'Fizzbuzz';
+    }
     if(($input%3)==0){
       return 'Fizz';
     }
@@ -19,7 +22,9 @@ class FizzbuzzTest extends PHPUnit_Framework_TestCase {
       array(4,4),
       array(5,"Buzz"),
       array(6,"Fizz"),
-      array(10,"Buzz"));
+      array(10,"Buzz"),
+      array(15,"Fizzbuzz")
+    );
   }
 
   /**

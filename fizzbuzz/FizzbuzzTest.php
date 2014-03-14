@@ -4,6 +4,9 @@ class Fizzbuzz {
     if($input==3){
       return 'Fizz';
     }
+    if($input==5){
+      return 'Buzz';
+    }
     return $input;
   }
 }
@@ -36,6 +39,14 @@ class FizzbuzzTest extends PHPUnit_Framework_TestCase {
   function testInput4ShouldReturn4() {
     $expected = 4;
     $input = 4;
+    $fizzbuzz = new Fizzbuzz();
+    $result = $fizzbuzz->validateFizzbuzz($input);
+    $this->assertEquals($expected, $result);
+  }
+
+  function testInput5ShouldReturnBuzz(){
+    $expected = 'Buzz';
+    $input = 5;
     $fizzbuzz = new Fizzbuzz();
     $result = $fizzbuzz->validateFizzbuzz($input);
     $this->assertEquals($expected, $result);

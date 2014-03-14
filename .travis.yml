@@ -1,4 +1,4 @@
 language: php
 php:
   - 5.4
-script "./fizzbuzz/vendor/bin/phpunit"
+script "./fizzbuzz/vendor/bin/phpunit ./fizzbuzz/FizzbuzzTest.php"

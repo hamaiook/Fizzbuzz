@@ -13,60 +13,21 @@ class Fizzbuzz {
 
 class FizzbuzzTest extends PHPUnit_Framework_TestCase {
   function valueInput(){
-    return array(array(1,1));
+    return array(array(1,1),
+      array(2,2),
+      array(3,"Fizz"),
+      array(4,4),
+      array(5,"Buzz"));
   }
 
   /**
    * @dataProvider valueInput
    */
   function testInputShouldReturn($input,$expected) {
-    //$expected = 1;
     $result = $this->countFizzbuzz($input);
     $this->assertEquals($expected, $result);
   }
 
-  /*
-  function testInput1ShouldReturn1() {
-    $expected = 1;
-    $input = 1;
-    $result = $this->countFizzbuzz($input);
-    $this->assertEquals($expected, $result);
-  }
-   */
-  function testInput2ShouldReturn2() {
-    $expected = 2;
-    $input = 2;
-    $result = $this->countFizzbuzz($input);
-    $this->assertEquals($expected, $result);
-  }
-  
-  function testInput3ShouldReturnFizz() {
-    $expected = 'Fizz';
-    $input = 3;
-    $result = $this->countFizzbuzz($input);
-    $this->assertEquals($expected, $result);
-  }
-  
-  function testInput4ShouldReturn4() {
-    $expected = 4;
-    $input = 4;
-    $result = $this->countFizzbuzz($input);
-    $this->assertEquals($expected, $result);
-  }
-
-  function testInput5ShouldReturnBuzz(){
-    $expected = 'Buzz';
-    $input = 5;
-    $result = $this->countFizzbuzz($input);
-    $this->assertEquals($expected, $result);
-  }
-  function testInput6ShouldReturn6(){
-    $expected = 6;
-    $input = 6;
-    $result = $this->countFizzbuzz($input);
-    $this->assertEquals($expected, $result);
-  }
-  
   function countFizzbuzz($input) {
     $fizzbuzz = new Fizzbuzz();
     return $fizzbuzz->validateFizzbuzz($input);
